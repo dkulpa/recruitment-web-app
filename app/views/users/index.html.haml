@@ -1,0 +1,4 @@
+%h1 List of users
+
+- @users.each_with_index do |user, index|
+  %p= "#{index+1}: #{user.email}"

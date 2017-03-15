@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise'
+gem 'haml-rails', '~> 0.9.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -37,9 +39,12 @@ gem 'jbuilder', '~> 2.5'
 
 group :test do
   gem 'rspec-rails'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
 end
 
 group :development, :test do
+  gem 'factory_girl_rails', '~> 4.8'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
