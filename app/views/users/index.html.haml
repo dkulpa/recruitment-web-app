@@ -1,4 +1,19 @@
 %h1 List of users
 
-- @users.each_with_index do |user, index|
-  %p= "#{index+1}: #{user.email}"
+%table{:border => 1}
+  %tbody
+    %tr
+      %td No:
+      %td Email:
+      %td Gender:
+      %td Age:
+      %td Interests:
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.email
+        %td= user.gender
+        %td= user.age
+        %td= user.interests.map(&:name).join(', ')
+        - if can? :destroy, user
+          %td= link_to image_tag('trash', size: '16x16'), user, method: :delete, data: { confirm: "Are You sure?" }
