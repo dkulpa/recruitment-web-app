@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 gem 'haml-rails', '~> 0.9.0'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
