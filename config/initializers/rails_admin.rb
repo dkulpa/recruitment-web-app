@@ -3,6 +3,23 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
   config.authorize_with :cancan
 
+  config.model 'User' do
+    field :email
+    field :gender
+    field :age
+    field :interests
+
+    edit do
+      field :password
+    end
+
+    config.model 'Interest' do
+      field :user
+      field :name
+      field :interest_type
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -27,8 +44,8 @@ RailsAdmin.config do |config|
   # config.show_gravatar true
 
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
+    dashboard # mandatory
+    index # mandatory
     new
     export
     bulk_delete
