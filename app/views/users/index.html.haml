@@ -17,3 +17,6 @@
         %td= user.interests.map(&:name).join(', ')
         - if can? :destroy, user
           %td= link_to image_tag('trash', size: '16x16'), user, method: :delete, data: { confirm: "Are You sure?" }
+
+- if current_user.admin
+  %p= link_to 'Download CSV list', users_path(format: :csv)
