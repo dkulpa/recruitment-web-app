@@ -17,6 +17,10 @@ RailsAdmin.config do |config|
       field :user
       field :name
       field :interest_type
+
+      list do
+        scopes [:all, :stage_6_scope]
+      end
     end
   end
 
