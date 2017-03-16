@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+div.admin-panel-link {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
