@@ -3,6 +3,11 @@
 
 %h1 List of users
 
+= search_form_for @q do |f|
+  = f.label :email_cont
+  = f.search_field :email_cont
+  = f.submit
+
 %table{:border => 1}
   %tbody
     %tr
@@ -21,6 +26,8 @@
         %td= link_to image_tag('email', size: '16x16'), controller: :users, action: :mailings, id: user.id
         - if can? :destroy, user
           %td= link_to image_tag('trash', size: '16x16'), user, method: :delete, data: { confirm: "Are You sure?" }
+
+= button_to 'Show all users', users_path
 
 - if current_user.admin
   %p= link_to 'Download CSV list', users_path(format: :csv)
