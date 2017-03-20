@@ -1,3 +1,6 @@
+- if flash[:notice]
+  .notice= flash[:notice]
+
 %h1 List of users
 
 %table{:border => 1}
@@ -15,6 +18,7 @@
         %td= user.gender
         %td= user.age
         %td= user.interests.map(&:name).join(', ')
+        %td= link_to image_tag('email', size: '16x16'), controller: :users, action: :mailings, id: user.id
         - if can? :destroy, user
           %td= link_to image_tag('trash', size: '16x16'), user, method: :delete, data: { confirm: "Are You sure?" }
 

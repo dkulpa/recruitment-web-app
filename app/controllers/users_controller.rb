@@ -21,4 +21,12 @@ class UsersController < ApplicationController
       flash[:alert] = 'User was not deleted!'
     end
   end
+
+  def mailings
+    @user = User.find(params[:id])
+
+    MailSender.new(@user).send_email
+    flash[:notice] = "Mail has been sent."
+    redirect_to root_path
+  end
 end
