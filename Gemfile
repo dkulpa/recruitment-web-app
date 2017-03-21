@@ -11,6 +11,7 @@ gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'rails_admin', '~> 1.1', '>= 1.1.1'
 gem 'figaro'
 gem 'ransack'
+gem 'email_validator'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -54,6 +55,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-rails', '~> 0.3.5'
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'

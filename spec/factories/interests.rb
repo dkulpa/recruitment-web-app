@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :interest do
-    user nil
+    user
+    name          'cycling'
+    interest_type ['health', 'hobby', 'work'].sample
   end
 end
